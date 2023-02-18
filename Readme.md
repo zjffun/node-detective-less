@@ -19,6 +19,9 @@ var content = fs.readFileSync('styles.less', 'utf8');
 
 // list of imported file names (ex: '_foo.less', '_foo', etc)
 var dependencies = detective(content);
+
+// or to also detect any url() references to images, fonts, etc.
+const allDependencies = detective(content, { url: true });
 ```
 
 ### License
